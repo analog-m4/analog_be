@@ -1,0 +1,18 @@
+current directory: /Users/nicholasmcenroe/turing_work/4mod/projects/analog/analog_be/vendor/bundle/ruby/3.2.0/gems/racc-1.7.3/ext/racc/cparse
+/Users/nicholasmcenroe/.rbenv/versions/3.2.2/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/nicholasmcenroe/turing_work/4mod/projects/analog/analog_be/vendor/bundle/ruby/3.2.0/gems/racc-1.7.3/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20231130-12460-2va2wb sitelibdir\=./.gem.20231130-12460-2va2wb clean
+
+current directory: /Users/nicholasmcenroe/turing_work/4mod/projects/analog/analog_be/vendor/bundle/ruby/3.2.0/gems/racc-1.7.3/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20231130-12460-2va2wb sitelibdir\=./.gem.20231130-12460-2va2wb
+compiling cparse.c
+linking shared-object racc/cparse.bundle
+
+current directory: /Users/nicholasmcenroe/turing_work/4mod/projects/analog/analog_be/vendor/bundle/ruby/3.2.0/gems/racc-1.7.3/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20231130-12460-2va2wb sitelibdir\=./.gem.20231130-12460-2va2wb install
+/usr/bin/install -c -m 0755 cparse.bundle ./.gem.20231130-12460-2va2wb/racc
+
+current directory: /Users/nicholasmcenroe/turing_work/4mod/projects/analog/analog_be/vendor/bundle/ruby/3.2.0/gems/racc-1.7.3/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20231130-12460-2va2wb sitelibdir\=./.gem.20231130-12460-2va2wb clean
