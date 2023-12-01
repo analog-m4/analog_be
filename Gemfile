@@ -50,6 +50,11 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'simplecov'
   gem 'rspec-rails'
+
+  #Vulnerability Check for CI
+  gem "brakeman"
+  gem "bundler-audit"
+  gem "ruby_audit"
 end
 
 group :development do
