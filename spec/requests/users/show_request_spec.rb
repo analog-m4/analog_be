@@ -15,8 +15,7 @@ describe "request a single users information" do
     expect(found_user[:id]).to be_a String
     expect(found_user[:type]).to be_a String
     expect(found_user[:attributes]).to be_a Hash
-    expect(found_user[:attributes].keys).to eq([:id, :username, :email])
-    expect(found_user[:attributes][:id]).to be_an Integer
+    expect(found_user[:attributes].keys).to eq([:username, :email])
     expect(found_user[:attributes][:username]).to be_an String
     expect(found_user[:attributes][:email]).to be_an String
   end
