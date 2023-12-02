@@ -19,8 +19,7 @@ describe "request all users information" do
       expect(user[:id]).to be_a String
       expect(user[:type]).to be_a String
       expect(user[:attributes]).to be_a Hash
-      expect(user[:attributes].keys).to eq([:id, :username, :email])
-      expect(user[:attributes][:id]).to be_an Integer
+      expect(user[:attributes].keys).to eq([:username, :email])
       expect(user[:attributes][:username]).to be_an String
       expect(user[:attributes][:email]).to be_an String
     end
