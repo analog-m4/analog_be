@@ -1,8 +1,8 @@
-class Api::V1::FIlesController < ApplicationController
+class Api::V1::FileUploadsController < ApplicationController
   before_action :set_post, only: [:show, :destroy]
 
   def index
-    @files = File.all
+    @files = FileUpload.all
 
     render json: @files
   end
@@ -12,7 +12,7 @@ class Api::V1::FIlesController < ApplicationController
   end
 
   def create
-    @file = File.new(file_params)
+    @file = FileUpload.new(file_params)
 
       if @file.save
         render json: @file, status: :created, location: @file
@@ -28,11 +28,11 @@ class Api::V1::FIlesController < ApplicationController
   private
 
   def set_file
-    @file= File.find(params[:id])
+    @file= FileUpload.find(params[:id])
   end
 
   def post_params
-    params.require(:file).permit(:title, :image)
+    params.require(:file_upload).permit(:name, :document)
   end
 end
 
