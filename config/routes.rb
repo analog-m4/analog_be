@@ -7,6 +7,7 @@ namespace :api do
     resources :users do
       resources :projects do
         resources :tasks
+        resources :files, only: [:index, :create, :delete]
       end
     end
   end
