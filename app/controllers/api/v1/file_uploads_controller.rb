@@ -1,14 +1,12 @@
 class Api::V1::FileUploadsController < ApplicationController
-  before_action :set_post, only: [:show, :destroy]
-
   def index
-    @files = FileUpload.all
-
-    render json: @files
+    files = FileUploadsFacade.new(params[:user_id]).fetch_uploads
+    render json: SearchedFileUploadsSerializer.new(uploads)
   end
 
   def show 
-    render json: @file
+    file = FileUploadsFacade.new(user_id: params[:user_id], upload_id: params[:upload_id])
+    render json: SearchedFileUploadsSerializer.new(uploads)
   end
 
   def create
@@ -22,16 +20,15 @@ class Api::V1::FileUploadsController < ApplicationController
   end
 
   def destroy
-    @file.destroy
+    file_upload = FileUpload.find_by(user_id: params[:user_id], upload_id: params[:upload_id])
+    file_upload.destroy
+    render json: {}, status: 200
+    #No error handling yet
   end
 
   private
 
-  def set_file
-    @file= FileUpload.find(params[:id])
-  end
-
-  def post_params
+  def file_params
     params.require(:file_upload).permit(:name, :document)
   end
 end
