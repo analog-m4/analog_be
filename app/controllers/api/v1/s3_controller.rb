@@ -1,4 +1,4 @@
-requir 'aws-sdk-s3'
+require 'aws-sdk-s3'
 
 class Api::V1::S3Controller < ApplicationController
   def index
