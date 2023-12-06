@@ -32,6 +32,10 @@ class Api::V1::UsersController < ApplicationController
     end
   end
 
+  def dashboard
+    user = User.includes(projects: :tasks).find(params[:id])
+    render json: UserDashboardSerializer.new(user)
+  end
   private
 
   def user_params
