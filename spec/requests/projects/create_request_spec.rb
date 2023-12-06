@@ -16,7 +16,7 @@ describe "create a users projects" do
     new_project = JSON.parse(response.body, symbolize_names: true)[:data]
 
     expect(new_project).to be_a Hash
-    expect(new_project.keys).to eq([:id, :type, :attributes])
+    expect(new_project.keys).to eq([:id, :type, :attributes, :relationships])
     expect(new_project[:id]).to be_a String
     expect(new_project[:type]).to be_a String
     expect(new_project[:attributes]).to be_a Hash

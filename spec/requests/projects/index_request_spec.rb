@@ -15,7 +15,7 @@ describe "request all of a users project information" do
     expect(projects).to be_an Array
     
     projects.each do |project|
-      expect(project.keys).to eq([:id, :type, :attributes])
+      expect(project.keys).to eq([:id, :type, :attributes, :relationships])
       expect(project[:id]).to be_a String
       expect(project[:type]).to be_a String
       expect(project[:attributes]).to be_a Hash

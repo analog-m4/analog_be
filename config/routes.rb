@@ -5,6 +5,7 @@ resources :fake_route
 namespace :api do
   namespace :v1 do
     resources :users do
+      get 'dashboard', on: :member
       resources :projects do
         resources :tasks
       end
