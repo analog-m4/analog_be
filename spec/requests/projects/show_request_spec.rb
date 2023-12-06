@@ -12,7 +12,7 @@ describe "request a single projects information" do
     found_project = JSON.parse(response.body, symbolize_names: true)[:data]
 
     expect(found_project).to be_a Hash
-    expect(found_project.keys).to eq([:id, :type, :attributes])
+    expect(found_project.keys).to eq([:id, :type, :attributes, :relationships])
     expect(found_project[:id]).to be_a String
     expect(found_project[:type]).to be_a String
     expect(found_project[:attributes]).to be_a Hash

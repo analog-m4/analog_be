@@ -14,7 +14,7 @@ describe "update a users projects" do
     updated_project = JSON.parse(response.body, symbolize_names: true)[:data]
 
     expect(updated_project).to be_a Hash
-    expect(updated_project.keys).to eq([:id, :type, :attributes])
+    expect(updated_project.keys).to eq([:id, :type, :attributes, :relationships])
     expect(updated_project[:id]).to be_a String
     expect(updated_project[:type]).to be_a String
     expect(updated_project[:attributes]).to be_a Hash

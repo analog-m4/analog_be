@@ -13,7 +13,7 @@ RSpec.describe "User Dashboard endpoint", type: :request do
             get "/api/v1/users/#{user1.id}/dashboard"
 
             json_response = JSON.parse(response.body, symbolize_names: true)
-            binding.pry
+            # binding.pry
             expect(response).to be_successful
             expect(json_response[:data][:id]).to eq(user1.id.to_s)
             expect(json_response[:data][:type]).to eq("dashboard")
