@@ -9,33 +9,27 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def create
-    user = User.new(user_params)
-    if user.save
-      render json: UserSerializer.new(user)
-    else
-      render json: { failure: "User Could Not Be Created" }
-    end
+    user = User.create!(user_params)
+    render json: UserSerializer.new(user), status: 201
   end
 
   def update
     user = User.find(params[:id])
-    user.update(user_params)
+    user.update!(user_params)
     render json: UserSerializer.new(user)
   end
 
   def destroy
-    if User.ids.any? {|id| id == params[:id].to_i}
-      User.destroy(params[:id])
-      render json: { success: "User Deleted" }
-    else
-      render json: { failure: "ID Not Found" }
-    end
+    user = User.find(params[:id])
+    user.destroy
+    render json: { success: "User Deleted" }
   end
 
   def dashboard
     user = User.includes(projects: :tasks).find(params[:id])
     render json: UserDashboardSerializer.new(user)
   end
+  
   private
 
   def user_params

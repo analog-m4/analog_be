@@ -37,12 +37,12 @@ describe "create a projects tasks" do
     }
     post api_v1_user_project_tasks_path(user, project1), params: task, as: :json
 
-    expect(response).to be_successful
+    expect(response.status).to eq(422)
 
     message = JSON.parse(response.body, symbolize_names: true)
 
     expect(message).to be_a Hash
-    expect(message.keys).to eq([:failure])
-    expect(message[:failure]).to eq("Task Could Not Be Created")
+    expect(message[:error].keys).to eq([:priority])
+    expect(message[:error][:priority]).to eq(["can't be blank"])
   end
 end

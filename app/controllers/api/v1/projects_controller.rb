@@ -10,27 +10,20 @@ class Api::V1::ProjectsController < ApplicationController
   end
 
   def create
-    project = Project.new(project_params)
-    if project.save
-      render json: ProjectSerializer.new(project)
-    else
-      render json: { failure: "Project Could Not Be Created" }
-    end
+    project = Project.create!(project_params)
+    render json: ProjectSerializer.new(project), status: 201
   end
 
   def update
     project = Project.find(params[:id])
-    project.update(project_params)
+    project.update!(project_params)
     render json: ProjectSerializer.new(project)
   end
 
   def destroy
-    if Project.ids.any? {|id| id == params[:id].to_i}
-      Project.destroy(params[:id])
-      render json: { success: "Project Deleted" }
-    else
-      render json: { failure: "ID Not Found" }
-    end
+    project = Project.find(params[:id])
+    project.destroy
+    render json: { success: "Project Deleted" }
   end
 
   private

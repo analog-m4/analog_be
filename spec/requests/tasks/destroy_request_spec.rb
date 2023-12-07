@@ -23,12 +23,11 @@ describe "delete a single task" do
   
     delete api_v1_user_project_task_path(user, project1, 1)
 
-    expect(response).to be_successful
+    expect(response.status).to eq(404)
 
     message = JSON.parse(response.body, symbolize_names: true)
 
     expect(message).to be_a Hash
-    expect(message.keys).to eq([:failure])
-    expect(message[:failure]).to eq("ID Not Found")
+    expect(message[:error]).to eq("Couldn't find Task with 'id'=1")
   end
 end
