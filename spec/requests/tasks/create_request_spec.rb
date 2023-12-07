@@ -33,7 +33,6 @@ describe "create a projects tasks" do
     project1 = user.projects.create!(title: "Project 1", description: "This is the first project", color: "123xyz", deadline: "12/12/2023" )
     task = {
       "title": "Task 1",
-      "description": "A New Task",
     }
     post api_v1_user_project_tasks_path(user, project1), params: task, as: :json
 
@@ -42,7 +41,6 @@ describe "create a projects tasks" do
     message = JSON.parse(response.body, symbolize_names: true)
 
     expect(message).to be_a Hash
-    expect(message[:error].keys).to eq([:priority])
-    expect(message[:error][:priority]).to eq(["can't be blank"])
+    expect(message[:error]).to eq(["Description can't be blank", "Priority can't be blank"])
   end
 end

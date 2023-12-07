@@ -7,6 +7,6 @@ class ApplicationController < ActionController::API
   end
 
   def render_unprocessable_entity_response(exception)
-    render json: { error: exception.record.errors }, status: 422
+    render json: { error: exception.record.errors.full_messages }, status: 422
   end
 end

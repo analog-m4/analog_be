@@ -33,7 +33,6 @@ describe "create a single user" do
     message = JSON.parse(response.body, symbolize_names: true)
 
     expect(message).to be_a Hash
-    expect(message[:error].keys).to eq([:username])
-    expect(message[:error][:username]).to eq(["can't be blank"])
+    expect(message[:error][0]).to eq("Username can't be blank")
   end
 end
