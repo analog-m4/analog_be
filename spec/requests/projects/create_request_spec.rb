@@ -43,6 +43,6 @@ describe "create a users projects" do
     message = JSON.parse(response.body, symbolize_names: true)
 
     expect(message).to be_a Hash
-    expect(message[:error]).to eq("Title can't be blank")
+    expect(message[:error][0]).to eq("Title can't be blank")
   end
 end
