@@ -38,12 +38,11 @@ describe "create a users projects" do
     }
     post api_v1_user_projects_path(user), params: project, as: :json
 
-    expect(response).to be_successful
+    expect(response.status).to eq(422)
 
     message = JSON.parse(response.body, symbolize_names: true)
 
     expect(message).to be_a Hash
-    expect(message.keys).to eq([:failure])
-    expect(message[:failure]).to eq("Project Could Not Be Created")
+    expect(message[:error][0]).to eq("Title can't be blank")
   end
 end

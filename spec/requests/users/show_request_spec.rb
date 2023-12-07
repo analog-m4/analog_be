@@ -19,4 +19,14 @@ describe "request a single users information" do
     expect(found_user[:attributes][:username]).to be_an String
     expect(found_user[:attributes][:email]).to be_an String
   end
+
+  it "returns an error when trying to find a user that does not exist" do
+    get "/api/v1/users/999999999"
+
+    expect(response.status).to eq(404)
+
+    result = JSON.parse(response.body, symbolize_names: true)
+
+    expect(result[:error]).to eq("Couldn't find User with 'id'=999999999")
+  end
 end

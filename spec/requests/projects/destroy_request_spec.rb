@@ -21,12 +21,11 @@ describe "delete a single project" do
   
     delete api_v1_user_project_path(user, 1)
 
-    expect(response).to be_successful
+    expect(response.status).to eq(404)
 
     message = JSON.parse(response.body, symbolize_names: true)
 
     expect(message).to be_a Hash
-    expect(message.keys).to eq([:failure])
-    expect(message[:failure]).to eq("ID Not Found")
+    expect(message[:error]).to eq("Couldn't find Project with 'id'=1")
   end
 end
