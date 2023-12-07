@@ -4,7 +4,29 @@
 
 # <p align="center"> Analog </p>
 
-This application has been designed to expose backend endpoints for our frontend application to consume. The project utilizes a service-oriented architecture, enabling the frontend to consume both this API and our AWS S3-specific API. This setup allows users to organize their projects and tasks within a single application.
+## Table of Contents
+
+[Abstract](#abstract) |
+[Application Details](#application-details) |
+[Technologies](#technologies) |
+[installation](#installation) |
+[Database Schema](#database-schema) |
+[Endpoints](#endpoints) |
+[Contributors](#contributors) 
+
+## Abstract
+
+INSERT PITCH HERE
+INCLUDE: 
+- File upload services
+- Whiteboard and Drawing Features
+- Project and task management
+
+I will do this later if no one else wants to do the pitch.  
+
+## Application Details
+
+This application has been designed to expose backend endpoints for our frontend application to consume. This project utilizes service-oriented architecture, enabling the frontend to consume both this API and our AWS S3-specific API.
 
 [Frontend Code Repository](https://github.com/analog-m4/analog_fe)
 
@@ -16,16 +38,6 @@ Our Applications:
 This project served as our group's capstone, fulfilling the graduation requirements for the Turing School of Software and Design. For further information on Capstone requirements, please visit: [Capstone Project](https://mod4.turing.edu/projects/capstone/)
 
 ![Ruby](https://img.shields.io/badge/ruby-%23CC342D.svg?style=for-the-badge&logo=ruby&logoColor=white) ![Rails](https://img.shields.io/badge/rails-%23CC0000.svg?style=for-the-badge&logo=ruby-on-rails&logoColor=white) ![Heroku](https://img.shields.io/badge/heroku-%23430098.svg?style=for-the-badge&logo=heroku&logoColor=white) ![GitHub Actions](https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white) ![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
-
-## About Analog
-
-INSERT PITCH HERE
-INCLUDE: 
-- File upload services
-- Whiteboard and Drawing Features
-- Project and task management
-
-I will do this later if no one else wants to do the pitch.  
 
 ## Technologies
 - Ruby 3.2.2
