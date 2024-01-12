@@ -37,7 +37,12 @@ gem "bootsnap", require: false
 gem "rack-cors"
 
 gem "jsonapi-serializer"
+gem "actionmailer"
+gem "mail"
+gem "letter_opener"
+gem "whenever", require: false
 
+gem "selenium-webdriver"
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
